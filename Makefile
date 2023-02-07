@@ -12,6 +12,7 @@ run:
 	@$(kapply)secret.yaml
 	@$(kapply)storageClass.yaml
 	@$(kapply)data-pvc.yaml
+	@$(kapply)secret-org.yaml
 
 fill-db:
 	@$(kapply)data-service.yaml
@@ -26,5 +27,6 @@ stop:
 	@$(kdelete)data-script-job.yaml
 	@$(kdelete)myapp-networkpolicy.yaml
 	@$(kdelete)secret.yaml
+	@$(kapply)secret-org.yaml
 clean:
 	@$(kdelete)data-pvc.yaml
